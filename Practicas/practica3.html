@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Practica 3</title>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <script>
+        function recolectarDatos() {
+            let nombre = prompt("¿Cuál es tu nombre?");
+            let actividadFavorita = prompt("¿Cuál es tu actividad favorita?");
+            return { nombre, actividadFavorita };
+        }
+
+        function confirmarDatos(datos) {
+            let confirmacion = confirm("¿Tus datos son correctos?\nNombre: " + datos.nombre + "\nActividad Favorita: " + datos.actividadFavorita);
+            return confirmacion;
+        }
+
+        function MensajeFinal(confirmacion) {
+            if (confirmacion) {
+                alert("¡Gracias! La información ha sido guardada.");
+            } else {
+                alert("Los datos no han sido guardados.");
+            }
+        }
+
+        function funcionLibre() {
+            alert("yehaw");
+        }
+
+        let datosUsuario = recolectarDatos();
+        let confirmacionDatos = confirmarDatos(datosUsuario);
+        MensajeFinal(confirmacionDatos);
+
+        funcionLibre();
+    </script>
+</body>
+</html>

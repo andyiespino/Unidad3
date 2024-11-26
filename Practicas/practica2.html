@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Practica 2</title>
+</head>
+<body>
+    <h1>Practica 2</h1>
+    <script>
+        let nombre = prompt("¿Cuál es tu nombre?");
+        let edad = prompt("¿Cuál es tu edad?");
+        let pais = prompt("¿De qué país eres?");
+
+        alert("Hola, " + nombre + "!" + " Tu edad es " + edad + " y tu país de residencia es " + pais);
+
+        let datos = prompt("¿Tus datos son correctos? (Si/No)");
+
+        if (datos === "Si") {
+            alert("Registros guardados correctamente: " + nombre + ", " + edad + " años, " + pais);
+        } else if (datos === "No") {
+            alert("Registros BORRADOS");
+        } else {
+            alert("Respuesta no válida.");
+        }
+    </script>
+</body>
+</html>

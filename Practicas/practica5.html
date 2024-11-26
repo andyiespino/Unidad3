@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Frutas</title>
+</head>
+<body>
+    <h1>Ingreso de Frutas</h1>
+
+    <script>
+        let frutas = [];
+
+        let ingresarFrutas = true;
+        
+        while (ingresarFrutas) {
+            let fruta = prompt("Ingresa el nombre de una fruta (o deja vacío para terminar):");
+
+            if (fruta === "") {
+                ingresarFrutas = false;
+            } else {
+                frutas.push(fruta);
+            }
+        }
+
+        if (frutas.length > 0) {
+            alert("Las frutas ingresadas son: " + frutas.join(", "));
+        } else {
+            alert("No se ingresaron frutas.");
+        }
+    </script>
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Calificaciones</title>
+</head>
+<body>
+    <h1>Promedio de Calificaciones</h1>
+
+    <script>
+        let calificaciones = [];
+        let continuar = true;
+
+        while (continuar) {
+            let calificacion = prompt("Ingresa una calificación (o deja vacío para terminar):");
+
+            if (calificacion === "") {
+                continuar = false;
+            } else {
+                calificacion = parseFloat(calificacion);
+
+                if (!isNaN(calificacion) && calificacion >= 0 && calificacion <= 10) {
+                    calificaciones.push(calificacion);
+                } else {
+                    alert("Por favor, ingresa una calificación válida entre 0 y 10.");
+                }
+            }
+        }
+
+        if (calificaciones.length > 0) {
+            let suma = calificaciones.reduce((acumulado, calificacion) => acumulado + calificacion, 0);
+            let promedio = suma / calificaciones.length;
+
+            alert("Las calificaciones ingresadas son: " + calificaciones.join(", "));
+            alert("El promedio de las calificaciones es: " + promedio.toFixed(2));
+        } else {
+            alert("No se ingresaron calificaciones.");
+        }
+    </script>
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números</title>
+</head>
+<body>
+    <h1>Ingreso de Números</h1>
+
+    <script>
+        let numeros = [5, 10, 15, 20]; 
+
+        let continuar = true;
+
+        while (continuar) {
+            let numero = prompt("Ingresa un número (o deja vacío para terminar):");
+
+            if (numero === "") {
+                continuar = false;
+            } else {
+                numero = parseFloat(numero);
+
+                if (!isNaN(numero)) {
+                    numeros.push(numero);
+                } else {
+                    alert("Por favor, ingresa un número válido.");
+                }
+            }
+        }
+        alert("Los números ingresados son: " + numeros.join(", "));
+
+        let suma = numeros.reduce((acumulado, num) => acumulado + num, 0);
+
+        alert("La suma total de los números es: " + suma);
+    </script>
+</body>
+</html>
+
