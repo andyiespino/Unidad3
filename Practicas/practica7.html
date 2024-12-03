@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Pelis lol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .menu-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        #menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #menu li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        #menu li:hover {
+            background-color: #f9f871;
+        }
+
+        #menu li:last-child {
+            border-bottom: none;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        #menu a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú de Pelis lol</h1>
+    <div class="menu-container">
+        <ul id="menu">
+            <li>
+                Wicked 
+                <a href="https://www.youtube.com/watch?v=6COmYeLsz4c&t=101s" target="_blank">Ver en YouTube</a>
+            </li>
+            <li>
+                Harry Potter y La Piedra Filosofal 
+                <a href="https://www.youtube.com/watch?v=ZgrCZVjPg9g" target="_blank">Ver en YouTube</a>
+            </li>
+            <li>
+                Los Juegos del Hambre 
+                <a href="https://www.youtube.com/watch?v=PbA63a7H0bo" target="_blank">Ver en YouTube</a>
+            </li>
+            <li>
+                Hercules 
+                <a href="https://www.youtube.com/watch?v=ZvtspevZxpg" target="_blank">Ver en YouTube</a>
+            </li>
+            <li>
+                El Conjuro
+                <a href="https://www.youtube.com/watch?v=_zU1gLWGnpg" target="_blank">Ver en YouTube</a>
+            </li>
+        </ul>
+        <button id="remove-first">Eliminar Primer Elemento</button>
+        <button id="add-item">Agregar Enlace</button>
+    </div>
+
+    <script>
+        const menu = document.getElementById('menu');
+
+        const removeFirstButton = document.getElementById('remove-first');
+        removeFirstButton.addEventListener('click', () => {
+            if (menu.children.length > 0) {
+                menu.firstElementChild.remove(); // Elimina el primer hijo del menú
+            } else {
+                alert('El menú está vacío.');
+            }
+        });
+
+        const addItemButton = document.getElementById('add-item');
+        addItemButton.addEventListener('click', () => {
+            const newItemText = prompt('Ingresa el nombre de tu película favorita:');
+            const newItemLink = prompt('Ingresa el enlace de YouTube de la película:');
+
+            if (newItemText && newItemLink) {
+                const newItem = document.createElement('li'); 
+                newItem.textContent = newItemText;
+
+                const link = document.createElement('a'); 
+                link.href = newItemLink;
+                link.textContent = 'Ver en YouTube';
+                link.target = '_blank';
+
+                newItem.appendChild(link); 
+                menu.appendChild(newItem); 
+            } else {
+                alert('Por favor ingresa ambos valores (nombre y enlace).');
+            }
+        });
+    </script>
+</body>
+</html>
