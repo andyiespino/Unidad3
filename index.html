@@ -6,6 +6,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+<style>
+    #change-grid-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #change-grid-button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+    .bento .grid.changed {
+        background-color: #f9f871;
+        border: 2px dashed #4CAF50;
+        color: #333;
+        font-style: italic;
+    }
+</style>
 <body>
     <h1>Programación Web</h1>
     <h2>Unidad 3</h2>
@@ -121,6 +147,17 @@
          </div>
     </div>
     
+    <button id="change-grid-button">Cambiar Estilo del Grid</button>
 
+    <script>
+        const button = document.getElementById("change-grid-button");
+        const grids = document.querySelectorAll(".bento .grid");
+
+        button.addEventListener("click", () => {
+            grids.forEach(grid => {
+                grid.classList.toggle("changed");
+            });
+        });
+    </script>
 </body>
 </html>
